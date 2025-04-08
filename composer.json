@@ -1,0 +1,11 @@
+{
+  "config": {
+    "platform": {
+      "php": "8.0.28"
+    }
+  },
+  "require": {
+    "ramsey/uuid": "^4.7",
+    "symfony/uid": "^6.0"
+  }
+}
