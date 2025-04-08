@@ -1,16 +1,17 @@
-# /.htaccess
 <IfModule mod_rewrite.c>
     # Enable rewrite engine
     RewriteEngine On
+
+    # Set the base URL for the application (change this if needed)
     RewriteBase /TMTicket/
-    
-    # If the request is not for an actual file or directory, route it to index.php in the public folder
+
+    # If the request is not for an actual file or directory, route it to index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ public/index.php [QSA,L]
 </IfModule>
 
-# Set default character set
+# Set default character set to UTF-8
 AddDefaultCharset UTF-8
 
 # Enable CORS for API access
@@ -21,6 +22,8 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 # Handle OPTIONS method for CORS preflight requests
-RewriteEngine On
-RewriteCond %{REQUEST_METHOD} OPTIONS
-RewriteRule ^(.*)$ $1 [R=200,L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
