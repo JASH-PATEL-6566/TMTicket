@@ -1,5 +1,6 @@
 <?php
 // /public/index.php
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Enable error reporting for development
 ini_set('display_errors', 1);

@@ -2,10 +2,10 @@
     # Enable rewrite engine
     RewriteEngine On
 
-    # Set the base URL for the application (change this if needed)
-    RewriteBase /TMTicket/
+    # Set the base URL for the application
+    RewriteBase /
 
-    # If the request is not for an actual file or directory, route it to index.php
+    # If the request is not for an actual file or directory, route it to public/index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ public/index.php [QSA,L]
